@@ -95,7 +95,7 @@ def listCollisions(M, x, v, m, t):  # this is our final function which return al
             fst_coll = exp_coll.heappop()  # fastest collision
             tm = fst_coll[0]  # time of fastest collision
             ball_i = fst_coll[1]  # index of ball which is colliding in fastest collision
-            if update_lst[ball_i] == fst_coll[3]:  # this condition discards the previous expected collisions which will are not happening in the present.
+            if update_lst[ball_i] == fst_coll[3]:  # this condition discards the previous expected collisions which are not happening in the present.
                 vel = v[ball_i]  # copying v[i] so that it can be used in further calculations.
                 v[ball_i] = (M[ball_i] * v[ball_i] + 2 * M[ball_i + 1] * v[ball_i + 1] - M[ball_i + 1] * v[ball_i]) / (M[ball_i] + M[ball_i + 1])  # changing the velocity of ith ball
                 v[ball_i + 1] = (M[ball_i + 1] * v[ball_i + 1] + 2 * M[ball_i] * vel - M[ball_i] * v[ball_i + 1]) / (M[ball_i] + M[ball_i + 1])  # changing the velocity of i+1th ball
